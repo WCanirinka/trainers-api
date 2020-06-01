@@ -1,0 +1,2 @@
+class GymInstructor < ApplicationRecord
+end
