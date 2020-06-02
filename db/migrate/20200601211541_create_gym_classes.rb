@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CreateGymClasses < ActiveRecord::Migration[6.0]
   def change
     create_table :gym_classes do |t|
-      t.string :classTime
-      t.integer :instructor_id
+      t.datetime :classTime
+      t.integer :instructor, null: false, foreign_key: true
       t.string :status
-      t.integer :user_id
+      t.integer :user, foreign_key: true
 
       t.timestamps
     end
