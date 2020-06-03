@@ -1,7 +1,7 @@
 FactoryBot.define do
     factory :instructor do
-        name { 'name@example.com' }
-        email { '' }
+        name { 'John Doe' }
+        email { 'name@example.com' }
         password { 'foobar' }
         password_confirmation { 'foobar' }
     end
