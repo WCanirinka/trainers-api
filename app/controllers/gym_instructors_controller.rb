@@ -4,7 +4,7 @@ class GymInstructorsController < ApplicationController
   before_action :set_instructor, only: %i[show update destroy]
 
   def index
-    @instructors = Instructor.all
+    @instructors = GymInstructor.all
     json_response(@instructors)
   end
 
@@ -13,7 +13,7 @@ class GymInstructorsController < ApplicationController
   end
 
   def create
-    @instructor = Instructor.create!(instructor_params)
+    @instructor = GymInstructor.create!(instructor_params)
     json_response(@instructor)
   end
 
@@ -30,10 +30,10 @@ class GymInstructorsController < ApplicationController
   private
 
   def instructor_params
-    params.permit(:name, :trainingType, :instructorName, :gymImage)
+    params.permit(:name, :trainingType, :gymName, :gymImage)
   end
 
   def set_instructor
-    @instructor = Instructor.find(params[:id])
+    @instructor = GymInstructor.find(params[:id])
   end
 end
