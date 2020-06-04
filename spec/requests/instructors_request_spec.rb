@@ -48,20 +48,20 @@ RSpec.describe 'Instructors', type: :request do
   describe 'POST /instructors' do
     let(:valid_attributes) do
       {
-        name: '',
-        instImage: '',
-        gymName: '',
-        trainingType: '',
-        gymImage: ''
+        name: 'James'
+        instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym-instructor.jpg'
+        gymName: 'Chest Gym'
+        trainingType: 'Chest Training'
+        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg'
       }
     end
 
     let(:invalid_attributes) do
       {
-        instImage: 'https://raw.githubusercontent.com/phalado/final-capstone-api/master/images/astrid.png',
-        dragonName: 'Stormfly',
-        dragonType: 'Deadly Nadler',
-        dragonImage: 'https://raw.githubusercontent.com/phalado/final-capstone-api/master/images/Stormfly.png'
+        instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym-instructor.jpg'
+        gymName: 'Chest Gym'
+        trainingType: 'Chest Training'
+        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg'
       }
     end
 
@@ -69,7 +69,7 @@ RSpec.describe 'Instructors', type: :request do
       before { post '/instructors', params: valid_attributes }
 
       it 'creates a instructor' do
-        expect(json['name']).to eq('Astrid Hofferson')
+        expect(json['name']).to eq('James')
       end
 
       it 'returns status code 201' do
