@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'James',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym-instructor.jpg',
     gymName: 'Chest Gym',
@@ -8,7 +8,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'Roosevelt',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/leg-workout-instructor.png',
     gymName: 'Leg Gym',
@@ -16,7 +16,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/leg-gym.jpg',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'Mani',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/arms-gym-instructor.jpg',
     gymName: 'Arms Gym',
@@ -24,7 +24,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/arms-gym.jpg',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'Jasmine',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/abs-gym-instructor.jpg',
     gymName: 'Abs Gym',
@@ -32,7 +32,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/abs-gym.jpg',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'Natalie',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/calf-gym-instructor.png',
     gymName: 'Calf Gym',
@@ -40,7 +40,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/calf-gym.jpg',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'William',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/cardio-gym-instructor.png',
     gymName: 'Cardio Gym',
@@ -48,7 +48,7 @@ Instructor.create!(
     gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/cardio-gym.png',
 )
 
-Instructor.create!(
+GymInstructor.create!(
     name: 'Desmond',
     instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/shoulders-gym-instructor.jpg',
     gymName: 'Shoulders Gym',
