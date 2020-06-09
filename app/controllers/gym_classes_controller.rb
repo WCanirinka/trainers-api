@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+#gym_classes
 class GymClassesController < ApplicationController
   before_action :set_gym_class, only: %i[show update destroy]
 

@@ -20,7 +20,6 @@ In this repository, I built an API with data for gym instructors, classes, and u
   - [Contact](#contact)
   - [Acknowledgments](#acknowledgments)
 
-
 ## About
 
 The project's goal was to create a book of appointment. The back-end should be a REST API done with Ruby on Rails. The front-end should be done with React and Redux. This README will be focused on the API. For more details about the project visit the front-end's repository.
@@ -33,11 +32,9 @@ Link to a live version [here][live-version].
 
 Repository: https://github.com/WCanirinka/trainers-api
 
-
 ## The backend API
 
 The back-end consists of an API that receives a message and answers it with data from a database. The database is composed of three tables, to know, one for user data, one for instructors data, and one for classes.
-
 
 ### Data in the user table
 
@@ -53,7 +50,6 @@ The back-end consists of an API that receives a message and answers it with data
 * gymName
 * instImage - Instructor's image
 * gymImage - Dragon's image
-
 
 ### Data in gym_classes table
 
