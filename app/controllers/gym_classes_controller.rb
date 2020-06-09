@@ -29,7 +29,7 @@ class GymClassesController < ApplicationController
   private
 
   def gym_class_params
-    params.permit(:instructor_id, :user_id, :classTime, :status)
+    params.permit(:gym_instructors_id, :user_id, :classTime, :status)
   end
 
   def set_gym_class

@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_171145) do
 
   create_table "gym_classes", force: :cascade do |t|
     t.datetime "classTime"
-    t.integer "instructor", null: false
     t.string "status"
     t.integer "user"
     t.datetime "created_at", precision: 6, null: false
