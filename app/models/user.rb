@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+#user
+
 class User < ApplicationRecord
   has_many :gym_classes, dependent: :destroy
   validates :name, presence: true, length: { maximum: 50 }

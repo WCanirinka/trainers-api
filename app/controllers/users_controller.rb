@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 #users
+
 class UsersController < ApplicationController
   def index
     users = all_users
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     json_response({ id: @user.id, name: @user.name, 
-      email: @user.email, classes: @user.gym_classes })
+                    email: @user.email, classes: @user.gym_classes })
   end
 
   def create
