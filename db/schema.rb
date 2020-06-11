@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2020_06_04_171145) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "gym_instructors_id"
-    t.bigint "users_id"
-    t.index ["gym_instructors_id"], name: "index_gym_classes_on_gym_instructors_id"
-    t.index ["users_id"], name: "index_gym_classes_on_users_id"
+    t.bigint "gym_instructor_id"
+    t.bigint "user_id"
+    t.index ["gym_instructor_id"], name: "index_gym_classes_on_gym_instructor_id"
+    t.index ["user_id"], name: "index_gym_classes_on_user_id"
   end
 
   create_table "gym_instructors", force: :cascade do |t|
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_171145) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "gym_classes", "gym_instructors", column: "gym_instructors_id"
-  add_foreign_key "gym_classes", "users", column: "users_id"
+  add_foreign_key "gym_classes", "gym_instructors"
+  add_foreign_key "gym_classes", "users"
 end
