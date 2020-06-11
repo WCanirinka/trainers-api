@@ -54,11 +54,6 @@ class UsersController < ApplicationController
   end
 
   def all_users
-    users = User.all
-    new_users = []
-    users.each do |user|
-      new_users << { id: user.id, name: user.name, email: user.email }
-    end
-    new_users
+    users = User.select("id, name, email")
   end
 end
