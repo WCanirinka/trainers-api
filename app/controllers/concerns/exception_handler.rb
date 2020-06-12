@@ -4,7 +4,7 @@
 # Module
 # *
 
-module ExceptionHandler
+module ExceptionHandler # :nodoc:
   extend ActiveSupport::Concern
   included do
     rescue_from ActiveRecord::RecordNotFound do |e|

@@ -75,7 +75,8 @@
 #     end
 
 #     context 'wrong password' do
-#       before { get '/login', params: { email: 'user.email', password: 'foobaz' } }
+#       before { get '/login', params:
+# { email: 'user.email', password: 'foobaz' } }
 
 #       it 'returns false' do
 #         expect(json).to be_falsy

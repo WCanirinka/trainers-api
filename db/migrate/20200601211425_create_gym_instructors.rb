@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateGymInstructors < ActiveRecord::Migration[6.0]
+class CreateGymInstructors < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :gym_instructors do |t|
       t.string :name

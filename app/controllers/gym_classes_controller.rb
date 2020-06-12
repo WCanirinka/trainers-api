@@ -2,7 +2,7 @@
 
 # Module
 
-class GymClassesController < ApplicationController
+class GymClassesController < ApplicationController # :nodoc:
   before_action :set_gym_class, only: %i[show update destroy]
 
   def index

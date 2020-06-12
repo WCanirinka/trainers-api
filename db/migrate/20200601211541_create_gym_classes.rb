@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateGymClasses < ActiveRecord::Migration[6.0]
+class CreateGymClasses < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :gym_classes do |t|
       t.datetime :classTime

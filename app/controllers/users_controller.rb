@@ -2,7 +2,7 @@
 
 # Module
 
-class UsersController < ApplicationController
+class UsersController < ApplicationController # :nodoc:
   def index
     users = all_users
     json_response(users)

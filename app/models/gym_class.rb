@@ -2,7 +2,7 @@
 
 # Module
 
-class GymClass < ApplicationRecord
+class GymClass < ApplicationRecord # :nodoc:
   belongs_to :gym_instructor
   belongs_to :user
 

@@ -2,7 +2,7 @@
 
 # Module
 
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::API # :nodoc:
   include Response
   include ExceptionHandler
 end

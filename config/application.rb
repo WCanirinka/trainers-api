@@ -22,7 +22,7 @@ require 'rails/test_unit/railtie'
 Bundler.require(*Rails.groups)
 
 module TrainersApi
-  class Application < Rails::Application
+  class Application < Rails::Application # :nodoc:
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
