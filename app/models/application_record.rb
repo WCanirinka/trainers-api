@@ -1,4 +1,7 @@
+#**
 # frozen_string_literal: true
+#Module
+#*
 
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true

@@ -1,6 +1,7 @@
+#**
 # frozen_string_literal: true
-
-#Response
+#Module
+#*
 
 module Response
   def json_response(object, status = :ok)

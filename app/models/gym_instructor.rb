@@ -1,6 +1,7 @@
+#**
 # frozen_string_literal: true
-
-#gyminst
+#Module
+#*
 
 class GymInstructor < ApplicationRecord
   has_many :gym_classes, dependent: :destroy

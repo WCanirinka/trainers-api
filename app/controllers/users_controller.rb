@@ -1,6 +1,7 @@
+#**
 # frozen_string_literal: true
-
-#users
+#Module
+#*
 
 class UsersController < ApplicationController
   def index

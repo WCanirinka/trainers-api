@@ -1,6 +1,7 @@
+#**
 # frozen_string_literal: true
-
-#static
+#Module
+#*
 
 class StaticController < ApplicationController
   def home
