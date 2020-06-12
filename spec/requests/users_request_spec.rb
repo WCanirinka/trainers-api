@@ -48,7 +48,8 @@
 
 #   describe 'GET /login' do
 #     context 'Successful login' do
-#       before { get '/login', params: { email: user.email, password: user.password } }
+#       before { get '/login', params: 
+            # { email: user.email, password: user.password } }
 
 #       it 'returns' do
 #         expect(json['name']).to eq(user.name)
@@ -61,7 +62,8 @@
 #     end
 
 #     context 'not a user email login' do
-#       before { get '/login', params: { email: 'nope', password: user.password } }
+#       before { get '/login', params: 
+# { email: 'nope', password: user.password } }
 
 #       it 'returns false' do
 #         expect(json).to be_falsy
@@ -168,7 +170,8 @@
 
 #       it 'returns a validation failure message' do
 #         expect(response.body)
-#           .to match(/Validation failed: Password confirmation doesn't match Password/)
+#           .to match(/Validation failed: 
+# Password confirmation doesn't match Password/)
 #       end
 #     end
 #   end
