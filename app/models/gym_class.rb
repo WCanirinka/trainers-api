@@ -1,7 +1,6 @@
-#**
 # frozen_string_literal: true
-#Module
-#*
+
+# Module
 
 class GymClass < ApplicationRecord
   belongs_to :gym_instructor

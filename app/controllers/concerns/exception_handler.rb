@@ -1,7 +1,8 @@
-#**
+# **
 # frozen_string_literal: true
-#Module
-#*
+
+# Module
+# *
 
 module ExceptionHandler
   extend ActiveSupport::Concern

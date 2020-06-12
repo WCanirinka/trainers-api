@@ -1,7 +1,6 @@
-#**
 # frozen_string_literal: true
-#Module
-#*
+
+# Module
 
 class UsersController < ApplicationController
   def index
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    json_response({ id: @user.id, name: @user.name, 
+    json_response({ id: @user.id, name: @user.name,
                     email: @user.email, classes: @user.gym_classes })
   end
 
@@ -55,6 +54,6 @@ class UsersController < ApplicationController
   end
 
   def all_users
-    users = User.select("id, name, email")
+    User.select('id, name, email')
   end
 end

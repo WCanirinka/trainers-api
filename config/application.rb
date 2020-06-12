@@ -37,13 +37,13 @@ module TrainersApi
     config.api_only = true
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
-      origins '*'
-      resource(
-      '*',
-      headers: :any,
-      methods: [:get, :patch, :put, :delete, :post, :options]
-      )
+        origins '*'
+        resource(
+          '*',
+          headers: :any,
+          methods: %i[get patch put delete post options]
+        )
       end
-    end 
+    end
   end
 end
