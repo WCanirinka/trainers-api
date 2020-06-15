@@ -6,10 +6,11 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 if Rails.env.production?
-  abort('The Rails environment is
-    running in production mode!')
+  abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
+
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -31,6 +32,8 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  config.include RequestSpecHelper, type: :request
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
