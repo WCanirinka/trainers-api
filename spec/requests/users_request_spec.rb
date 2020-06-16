@@ -83,7 +83,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'returns a validation failure message' do
-        expect(response.body).to match("{\"message\":\"Validation failed: Password confirmation doesn't match Password\"}")
+        expect(response.body).to match(/Validation failed: Password confirmation doesn't match Password/)
       end
     end
   end
