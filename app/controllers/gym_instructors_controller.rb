@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class GymInstructorsController < ApplicationController # :nodoc:
   before_action :set_instructor, only: %i[show update destroy]
 

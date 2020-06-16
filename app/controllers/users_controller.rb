@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class UsersController < ApplicationController # :nodoc:
   def index
     users = all_users

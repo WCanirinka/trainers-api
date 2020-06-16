@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class GymClassesController < ApplicationController # :nodoc:
   before_action :set_gym_class, only: %i[show update destroy]
 

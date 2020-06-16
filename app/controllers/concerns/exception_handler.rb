@@ -1,9 +1,3 @@
-# **
-# frozen_string_literal: true
-
-# Module
-# *
-
 module ExceptionHandler # :nodoc:
   extend ActiveSupport::Concern
   included do
