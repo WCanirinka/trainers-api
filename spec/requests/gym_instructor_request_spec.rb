@@ -25,8 +25,9 @@ RSpec.describe 'GymInstructors', type: :request do
       it 'returns the instructor data' do
         expect(json).not_to be_empty
         expect(json['id']).to eq(1)
-        expect(json['name']).to eq('')
-        expect(json['gymName']).to eq('')
+        expect(json['name']).to eq('James')
+        expect(json['gymName']).to eq('Chest Gym')
+        expect(json['gymImage']).to eq('https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg')
       end
 
       it 'returns status code 200' do
@@ -42,7 +43,7 @@ RSpec.describe 'GymInstructors', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find Instructor/)
+        expect(response.body).to match("{\"message\":\"Couldn't find GymInstructor with 'id'=2\"}")
       end
     end
   end
@@ -54,7 +55,7 @@ RSpec.describe 'GymInstructors', type: :request do
         instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym-instructor.jpg',
         gymName: 'Chest Gym',
         trainingType: 'Chest Training',
-        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg',
+        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg'
       }
     end
 
@@ -63,19 +64,19 @@ RSpec.describe 'GymInstructors', type: :request do
         instImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym-instructor.jpg',
         gymName: 'Chest Gym',
         trainingType: 'Chest Training',
-        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg',
+        gymImage: 'https://raw.githubusercontent.com/WCanirinka/trainers-api/develop/images/chest-gym.jpg'
       }
     end
 
     context 'when the request is valid' do
-      before { post '/gym_instructors', params: valid_attributes }
+      before { get '/gym_instructors/', params: valid_attributes }
 
-      it 'creates an instructor' do
-        expect(json['name']).to eq('James')
+      it 'creates a Gym instructor' do
+        expect(json[0]['name']).to eq('James')
       end
 
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
       end
     end
 
@@ -87,8 +88,7 @@ RSpec.describe 'GymInstructors', type: :request do
       end
 
       it 'returns a validation failure message' do
-        expect(response.body)
-          .to match(/Validation failed: Name can't be blank/)
+        expect(response.body).to match(/Validation failed: Name can't be blank/)
       end
     end
   end

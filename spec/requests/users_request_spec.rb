@@ -1,11 +1,97 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   let!(:user) { create(:user) }
 
-  describe 'GET /users' do
-    before { get '/users' }
+  describe 'POST /users' do
+    let(:valid_attributes) do
+      {
+        name: 'John Doe',
+        email: 'johndoe@example.com',
+        password: 'foobar',
+        password_confirmation: 'foobar'
+      }
+    end
+
+    let(:no_name) do
+      {
+        email: 'jd@email.com',
+        password: 'foobar',
+        password_confirmation: 'foobar'
+      }
+    end
+
+    let(:no_email) do
+      {
+        name: 'J Doe',
+        password: 'foobar',
+        password_confirmation: 'foobar'
+      }
+    end
+
+    let(:dif_pass) do
+      {
+        name: 'J Doe',
+        email: 'jd@email.com',
+        password: 'foobar',
+        password_confirmation: 'foobas'
+      }
+    end
+
+    context 'when the request is valid' do
+      before { post '/users/', params: valid_attributes }
+
+      it 'creates a user' do
+        expect(json.size).to eq(1)
+        expect(json['status']).to be_truthy
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when there is no name' do
+      before { post '/users/', params: no_name }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body).to match(/Validation failed: Name can't be blank/)
+      end
+    end
+
+    context 'when there is no email' do
+      before { post '/users/', params: no_email }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body).to match(/Validation failed: Email can't be blank/)
+      end
+    end
+
+    context 'when the confirmation is different from the password' do
+      before { post '/users', params: dif_pass }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body).to match("{\"message\":\"Validation failed: Password confirmation doesn't match Password\"}")
+      end
+    end
+  end
+
+  describe 'GET /users/' do
+    before { get '/users/' }
 
     it 'returns' do
       expect(json).not_to be_empty
@@ -21,7 +107,7 @@ RSpec.describe 'Users', type: :request do
     context 'when the record exists' do
       before { get '/users/1' }
 
-      it 'returns the Gym Instructor data' do
+      it 'returns the Users data' do
         expect(json).not_to be_empty
         expect(json['id']).to eq(1)
         expect(json['name']).to eq(user.name)
@@ -81,92 +167,6 @@ RSpec.describe 'Users', type: :request do
 
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
-      end
-    end
-  end
-
-  describe 'POST /users' do
-    let(:valid_attributes) do
-      {
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        password: 'foobar',
-        password_confirmation: 'foobar'
-      }
-    end
-
-    let(:no_name) do
-      {
-        email: 'jd@email.com',
-        password: 'foobar',
-        password_confirmation: 'foobar'
-      }
-    end
-
-    let(:no_email) do
-      {
-        name: 'J Doe',
-        password: 'foobar',
-        password_confirmation: 'foobar'
-      }
-    end
-
-    let(:dif_pass) do
-      {
-        name: 'J Doe',
-        email: 'jd@email.com',
-        password: 'foobar',
-        password_confirmation: 'foobas'
-      }
-    end
-
-    context 'when the request is valid' do
-      before { post '/users', params: valid_attributes }
-
-      it 'creates a user' do
-        expect(json.size).to eq(1)
-        expect(json['status']).to be_truthy
-      end
-
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
-      end
-    end
-
-    context 'when there is no name' do
-      before { post '/users', params: no_name }
-
-      it 'returns status code 422' do
-        expect(response).to have_http_status(422)
-      end
-
-      it 'returns a validation failure message' do
-        expect(response.body)
-          .to match(/Validation failed: Name can't be blank/)
-      end
-    end
-
-    context 'when there is no email' do
-      before { post '/users', params: no_email }
-
-      it 'returns status code 422' do
-        expect(response).to have_http_status(422)
-      end
-
-      it 'returns a validation failure message' do
-        expect(response.body).to match(/Validation failed: Email can't be blank/)
-      end
-    end
-
-    context 'when the confirmation is different from the password' do
-      before { post '/users', params: dif_pass }
-
-      it 'returns status code 422' do
-        expect(response).to have_http_status(422)
-      end
-
-      it 'returns a validation failure message' do
-        expect(response.body).to match(/Validation failed:Password confirmation doesn't match Password/)
       end
     end
   end

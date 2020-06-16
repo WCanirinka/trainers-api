@@ -9,6 +9,7 @@ class UsersController < ApplicationController # :nodoc:
   end
 
   def show
+    @user = User.find(params[:id])
     json_response({ id: @user.id, name: @user.name,
                     email: @user.email, classes: @user.gym_classes })
   end
@@ -19,7 +20,8 @@ class UsersController < ApplicationController # :nodoc:
   end
 
   def update
-    @user.update(user_params)
+    @user = User.find(params[:id])
+    @user.update(user_params) if @user.present?
     json_response({ status: true })
   end
 
@@ -35,7 +37,8 @@ class UsersController < ApplicationController # :nodoc:
   end
 
   def destroy
-    @user.destroy
+    @user = User.find(params[:id])
+    @user.destroy if @user.present?
     head :no_content
   end
 
@@ -54,6 +57,11 @@ class UsersController < ApplicationController # :nodoc:
   end
 
   def all_users
-    User.select('id, name, email')
+    users = User.all
+    new_users = []
+    users.each do |user|
+      new_users << { id: user.id, name: user.name, email: user.email }
+    end
+    new_users
   end
 end
