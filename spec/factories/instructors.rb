@@ -1,9 +1,3 @@
-# **
-# frozen_string_literal: true
-
-# Module
-# *
-
 FactoryBot.define do
   factory :gym_instructor do
     name { 'James' }

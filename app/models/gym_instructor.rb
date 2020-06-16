@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class GymInstructor < ApplicationRecord # :nodoc:
   has_many :gym_classes, dependent: :destroy
 

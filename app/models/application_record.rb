@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class ApplicationRecord < ActiveRecord::Base # :nodoc:
   self.abstract_class = true
 

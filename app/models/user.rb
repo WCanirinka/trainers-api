@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# Module
-
 class User < ApplicationRecord # :nodoc:
   has_many :gym_classes, dependent: :destroy
   validates :name, presence: true, length: { maximum: 50 }

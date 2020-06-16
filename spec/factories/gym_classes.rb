@@ -1,9 +1,3 @@
-# **
-# frozen_string_literal: true
-
-# Module
-# *
-
 FactoryBot.define do
   factory :gym_class do
     user_id { 1 }
