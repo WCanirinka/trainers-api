@@ -54,7 +54,7 @@ The back-end consists of an API that receives a message and answers it with data
 ### Data in gym_classes table
 
 * classTime
-* instructor_id
+* gym_instructor_id
 * status - Boolean (not used)
 * user_id
 
