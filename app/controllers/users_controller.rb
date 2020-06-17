@@ -1,0 +1,63 @@
+class UsersController < ApplicationController # :nodoc:
+  def index
+    users = all_users
+    json_response(users)
+  end
+
+  def show
+    @user = User.find(params[:id])
+    json_response({ id: @user.id, name: @user.name,
+                    email: @user.email, classes: @user.gym_classes })
+  end
+
+  def create
+    @user = User.create!(user_params)
+    json_response({ status: true }, :created)
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params) if @user.present?
+    json_response({ status: true })
+  end
+
+  def check
+    user = get_user(user_params)
+    if user
+      if user.authenticate(params[:password])
+        json_response({ id: user.id, name: user.name, email: user.email })
+      else json_response(true)
+      end
+    else json_response(false)
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy if @user.present?
+    head :no_content
+  end
+
+  private
+
+  def user_params
+    params.permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def get_user(u_params)
+    User.find_by(email: u_params[:email])
+  end
+
+  def all_users
+    users = User.all
+    new_users = []
+    users.each do |user|
+      new_users << { id: user.id, name: user.name, email: user.email }
+    end
+    new_users
+  end
+end
