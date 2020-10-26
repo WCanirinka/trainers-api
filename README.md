@@ -1,170 +1,24 @@
-# Final Capstone Project's API
+# README
 
-This is part of Microverse's final capstone project.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-In this repository, I built an API with data for gym instructors, classes, and user profiles.
+Things you may want to cover:
 
-## Table of contents
+* Ruby version
 
-- [Final Capstone Project's API](#final-capstone-projects-api)
-  - [Table of contents](#table-of-contents)
-  - [About](#about)
-  - [The back-end API](#the-back-end-api)
-    - [Data in the user table](#data-in-the-user-table)
-    - [Data in instructors table](#data-in-instructors-table)
-    - [Data in gym_classes table](#data-in-flyclasses-table)
-    - [How to use it](#how-to-use-it)
-      - [End points](#end-points)
-      - [Local usage](#local-usage)
-    - [Technologies used](#technologies-used)
-  - [Contact](#contact)
-  - [Acknowledgments](#acknowledgments)
+* System dependencies
 
-## About
+* Configuration
 
-The project's goal was to create a book of appointment. The back-end should be a REST API done with Ruby on Rails. The front-end should be done with React and Redux. This README will be focused on the API. For more details about the project visit the front-end's repository.
+* Database creation
 
-The project's assignment can be seen [here][assignment].
+* Database initialization
 
-The front-end repository can be found [here][front-end].
+* How to run the test suite
 
-Link to a live version [here][live-version].
+* Services (job queues, cache servers, search engines, etc.)
 
-Repository: https://github.com/WCanirinka/trainers-api
+* Deployment instructions
 
-## The backend API
-
-The back-end consists of an API that receives a message and answers it with data from a database. The database is composed of three tables, to know, one for user data, one for instructors data, and one for classes.
-
-### Data in the user table
-
-* name
-* email
-* password_digest
-
-
-### Data in instructors table
-
-* name
-* trainingType
-* gymName
-* instImage - Instructor's image
-* gymImage - Dragon's image
-
-### Data in gym_classes table
-
-* classTime
-* instructor_id
-* status - Boolean (not used)
-* user_id
-
-
-### How to use it
-
-Base URL: https://trainers-appointment-api.herokuapp.com
-
-
-#### End points
-
-*/users*
-
-* **GET** - to receive an object with all users
-* **POST** - to create a new user - with parameters:
-  * name
-  * email
-  * password
-  * password_confirmation
-
-*/users/:id*
-
-* **PATCH** - to edit a user - with parameters:
-  * name
-  * email
-  * password
-  * password_confirmation
-* **GET** - to receive a specific user's data
-* **DELETE** - to delete a user
-
-*/login*
-
-* **GET** - to check login parameters - with parameters:
-  * email
-  * password
-
-*/gym_instructors*
-
-* **GET** - to receive an object with all users
-* **POST** - to create a new instructor - with parameters:
-  * name
-  * instImage
-  * gymName
-  * trainingType
-  * gymImage
-
-*instructors/id*
-
-* **GET** - to receive a specific instructor's data
-
-*/gym_classes*
-
-* **GET** - to receive an object with all the classes
-* **POST** - to create a new class - with parameters:
-  * instructor_id
-  * user_id
-  * classTime
-  * status
-
-*gym_classes/:id*
-
-* **DELETE** - to delete a specific class
-
-
-#### Local usage
-
-To use this API locally, follow the steps:
-
-* Download the repository as zip
-* Extract the data
-* Open your terminal and navigate to repository's folder
-* Run:
-  * Bundle install
-  * Rails db:create
-  * Rails db:migrate
-  * Rails db:seed
-  * Rails server
-
-
-### Technologies used
-
-To create this project I used:
-
-* Ruby on Rails
-* bcrypt gem
-* Heroku
-* Postgresql
-* rspec
-
-
-## Contact
-
-Author: Wilfried Canirinka
-
-Follow me on [Twitter][wil-twitter],  visit my [Github portfolio][wil-github], my [Linkedin][wil-linkedin].
-
-
-## Acknowledgments
-
-[Microverse][mcvs]
-
-I have no business rights about the characters used in this API. This is only for learning purposes.
-
-
-
-<!-- Links -->
-[assignment]: https://www.notion.so/Final-Capstone-Project-Book-an-Appointment-41ded2ee99ff4fe4becf91acb332ca26
-[live-version]: https://gym-trainer-app.netlify.app/
-[front-end]: https://github.com/WCanirinka/gym-trainer-app
-[mcvs]: https://www.microverse.org/
-[wil-github]: https://github.com/WCanirinka
-[wil-twitter]: https://twitter.com/WCanirinka
-[wil-linkedin]: https://www.linkedin.com/in/wilfried-canirinka/
+* ...
