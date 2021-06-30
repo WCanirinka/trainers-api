@@ -1,4 +1,4 @@
-# Final Capstone Project's API
+# API Project
 
 This is part of Microverse's final capstone project.
 
