@@ -1,37 +1,32 @@
+
+# README
+
 # API Project
 
-This is part of Microverse's final capstone project.
 
-In this repository, I built an API with data for gym instructors, classes, and user profiles.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Table of contents
+Things you may want to cover:
 
-- [Final Capstone Project's API](#final-capstone-projects-api)
-  - [Table of contents](#table-of-contents)
-  - [About](#about)
-  - [The back-end API](#the-back-end-api)
-    - [Data in the user table](#data-in-the-user-table)
-    - [Data in instructors table](#data-in-instructors-table)
-    - [Data in gym_classes table](#data-in-flyclasses-table)
-    - [How to use it](#how-to-use-it)
-      - [End points](#end-points)
-      - [Local usage](#local-usage)
-    - [Technologies used](#technologies-used)
-  - [Contact](#contact)
-  - [Acknowledgments](#acknowledgments)
+* Ruby version
 
-## About
+* System dependencies
 
-The project's goal was to create a book of appointment. The back-end should be a REST API done with Ruby on Rails. The front-end should be done with React and Redux. This README will be focused on the API. For more details about the project visit the front-end's repository.
+* Configuration
 
-The project's assignment can be seen [here][assignment].
+* Database creation
 
-The front-end repository can be found [here][front-end].
+* Database initialization
 
-Link to a live version [here][live-version].
+* How to run the test suite
 
-Repository: https://github.com/WCanirinka/trainers-api
+* Services (job queues, cache servers, search engines, etc.)
 
+* Deployment instructions
+
+
+* ...
 ## The backend API
 
 The back-end consists of an API that receives a message and answers it with data from a database. The database is composed of three tables, to know, one for user data, one for instructors data, and one for classes.
@@ -168,3 +163,4 @@ I have no business rights about the characters used in this API. This is only fo
 [wil-github]: https://github.com/WCanirinka
 [wil-twitter]: https://twitter.com/WCanirinka
 [wil-linkedin]: https://www.linkedin.com/in/wilfried-canirinka/
+
