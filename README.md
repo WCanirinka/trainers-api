@@ -163,4 +163,3 @@ I have no business rights about the characters used in this API. This is only fo
 [wil-github]: https://github.com/WCanirinka
 [wil-twitter]: https://twitter.com/WCanirinka
 [wil-linkedin]: https://www.linkedin.com/in/wilfried-canirinka/
-
