@@ -151,7 +151,8 @@ Follow me on [Twitter][wil-twitter],  visit my [Github portfolio][wil-github], m
 
 [Microverse][mcvs]
 
-I have no business rights about the characters used in this API. This is only for learning purposes.
+I have no business rights to the characters used in this API. This is only for learning purposes.
+This project has landed good jobs and created some curiosity for me to continue pushing forward
 
 
 
